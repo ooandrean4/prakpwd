@@ -1,5 +1,5 @@
 <?php
-echo "<h2>Login</h2>
+echo "<h2>PROSES REGISTRASI ULANG</h2>
     <form method=post action=cek_login.php>
         <table>
         <tr>
@@ -9,6 +9,10 @@ echo "<h2>Login</h2>
         <tr>
             <td>Password</td>
             <td> : <input name='paswd' type='text'></td>
+        </tr>
+         <tr>
+            <td>Nama ibu</td>
+            <td> : <input name='ibu' type='text'></td>
         </tr>
         <tr>
             <td>Captcha<br>
