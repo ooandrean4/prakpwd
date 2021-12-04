@@ -24,7 +24,7 @@
             <?php 
                 if(isset($_GET['cari'])){
                     $cari = $_GET['cari'];
-                    $sql="select * from khs where nim like'%".$cari."%'";
+                    $sql="select * from KHS where nim = '".$cari." '";
                     $tampil = mysqli_query($con,$sql);
             }else{
                 $sql="select * from KHS";

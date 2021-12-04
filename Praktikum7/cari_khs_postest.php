@@ -17,6 +17,7 @@
         <tr>
             <th>No</th>
             <th>NIM</th>
+            <th>Nama</th>
             <th>Kode MK</th>
             <th>Matkul</th>
             <th>Nilai</th>
@@ -24,10 +25,10 @@
             <?php 
                 if(isset($_GET['cari'])){
                     $cari = $_GET['cari'];
-                    $sql="select * from khs from KHS INNER JOIN mahasiswa on khs.nim=mahasiswa.nim where nim like'%".$cari."%'";
+                    $sql="select a.nim,a.nama,b.kodeMK,b.nama_matkul,c.nilai from mahasiswa as a INNER JOIN khs as c on c.nim=a.nim INNER JOIN matakuliah as b on c.kodeMK=b.kodeMK where c.nim like'%".$cari."%'";
                     $tampil = mysqli_query($con,$sql);
             }else{
-                $sql="select * from KHS INNER JOIN mahasiswa on khs.nim=mahasiswa.nim INNER JOIN matakuliah on khs.kodeMK=matakuliah.kodeMK";
+                $sql="select * from KHS JOIN mahasiswa on khs.nim=mahasiswa.nim  JOIN matakuliah on khs.kodeMK=matakuliah.kodeMK";
                 $tampil = mysqli_query($con,$sql);
             }
             $no = 1;
